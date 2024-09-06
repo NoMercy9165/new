@@ -18,5 +18,7 @@ class AccountPage(BasePage):
         self.wait_for_selector_and_click(self.SETTINGS_BUTTON)
         self.wait_for_selector_and_click(self.NOTEBOOK)
 
-    def settings_notebook_add(self, username, password):
-        self.settings_notebook(username, password)
+
+
+
+

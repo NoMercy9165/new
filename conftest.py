@@ -17,3 +17,11 @@ def credentials():
         "username": "aleksandr.petrichenko@kupibilet.ru",
         "password": "Demon9165max"
     }
+
+
+@pytest.fixture
+def invalid_credentials():
+    return {
+        "username": "invalid_user@example.com",
+        "password": "wrong_password"
+    }
