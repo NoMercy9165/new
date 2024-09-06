@@ -10,6 +10,7 @@ class AccountPage(BasePage):
     EMAIL_BUTTON = 'text="aleksandr.petrichenko@kupibilet.ru"'
     SETTINGS_BUTTON = 'text="Настройки"'
     NOTEBOOK = 'text="Записная книжка"'
+    ADD_PASSENGER_BUTTON = 'text="Добавить пассажира"'
 
     def settings_notebook(self, username, password):
         login_page = LoginPage(self.page)
@@ -17,6 +18,8 @@ class AccountPage(BasePage):
         self.wait_for_selector_and_click(self.EMAIL_BUTTON)
         self.wait_for_selector_and_click(self.SETTINGS_BUTTON)
         self.wait_for_selector_and_click(self.NOTEBOOK)
+        self.wait_for_selector_and_click(self.ADD_PASSENGER_BUTTON)
+
 
 
 
