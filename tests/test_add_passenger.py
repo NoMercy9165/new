@@ -16,4 +16,5 @@ def test_add_passenger(browser, credentials):
     profile_page.go_to_address_book()
     address_book.add_passenger(passenger_data)
 
-    passenger_locator = f"//li[.//h3[contains(text(), '{passenger_data['lastname']}') and contains(text(), '{passenger_data['firstname']}')]]"
+    locator = page.locator("li", has_text=f"{passenger_data['lastname']} {passenger_data['firstname']}")
+    assert locator.is_visible()
