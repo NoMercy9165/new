@@ -1,3 +1,5 @@
+import time
+
 from pages.address_book_page import AddressBook
 from pages.login_page import LoginPage
 from data_generators import generate_passenger_data
@@ -16,5 +18,6 @@ def test_add_passenger(browser, credentials):
     profile_page.go_to_address_book()
     address_book.add_passenger(passenger_data)
 
-    locator = page.locator("li", has_text=f"{passenger_data['lastname']} {passenger_data['firstname']}")
-    assert locator.is_visible()
+    # locator = page.locator("li", has_text=f"{passenger_data['lastname']} {passenger_data['firstname']}")
+    # time.sleep(1)
+    assert page.locator(f"text={passenger_data['lastname']} {passenger_data['firstname']}").is_visible()
