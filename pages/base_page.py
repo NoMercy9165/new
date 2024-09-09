@@ -40,3 +40,9 @@ class BasePage:
 
     def assert_input_value(self, selector, expected_value):
         expect(self.page.locator(selector)).to_have_value(expected_value)
+
+    def assert_element_contains_text(self, selector, text, timeout=10000):
+        locator = self.page.locator(selector)
+        locator.scroll_into_view_if_needed()
+        locator.wait_for(timeout=timeout)
+        assert text in locator.inner_text()
