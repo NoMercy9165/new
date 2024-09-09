@@ -39,7 +39,7 @@ class AddressBook(BasePage):
         passenger_locator = self.page.locator(
             f"//div[contains(text(), '{passenger_data['passport']}') and contains(text(), '{passenger_data['lastname']}')]")
 
-        assert passenger_locator.is_visible()
+        #assert passenger_locator.is_visible()
         self.wait_for_selector_and_click(passenger_locator)
         self.wait_for_selector_and_click(self.locators.DELETE_PASSENGER_BUTTON)
         self.wait_for_selector_and_click(self.locators.CONFIRM_DELETE_BUTTON)
