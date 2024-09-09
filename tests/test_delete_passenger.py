@@ -20,7 +20,5 @@ def test_delete_passenger(browser, credentials):
 
     address_book_page.delete_passenger(passenger_data)
 
-    passenger_locator = page.locator(
-        f"//div[contains(text(), '{passenger_data['passport']}') and contains(text(), '{passenger_data['lastname']}')]"
-    )
-    assert not passenger_locator.is_visible(), "The passenger should not be visible after being deleted"
+    assert not page.locator(f"text={passenger_data['lastname']} {passenger_data['firstname']}").is_visible()
+
