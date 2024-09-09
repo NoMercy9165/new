@@ -1,3 +1,5 @@
+import time
+
 from pages.address_book_page import AddressBook
 from pages.login_page import LoginPage
 from data_generators import generate_passenger_data
@@ -19,6 +21,6 @@ def test_delete_passenger(browser, credentials):
     address_book_page.add_passenger(passenger_data)  # Add passenger for testing deletion
 
     address_book_page.delete_passenger(passenger_data)
-
+    time.sleep(1)
     assert not page.locator(f"text={passenger_data['lastname']} {passenger_data['firstname']}").is_visible()
 

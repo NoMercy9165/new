@@ -22,6 +22,6 @@ class AddressBookPageLocators:
     GENDER_TOGGLER_ITEM_M = '[data-testid="gender-toggler-item-m"]'
     GENDER_TOGGLER_ITEM_F = '[data-testid="gender-toggler-item-f"]'
     SAVE_BUTTON = 'text=Сохранить'
-    DELETE_PASSENGER_BUTTON = 'button:text("Удалить пассажира")'
-    CONFIRM_DELETE_BUTTON = 'button:text("Удалить")'
+    DELETE_PASSENGER_BUTTON = 'text=Удалить пассажира'
+    CONFIRM_DELETE_BUTTON = 'text=Удалить'
     DOWNLOAD_NOTEBOOK_PASSENGERS = "//span[contains(text(), 'Загрузить ещё')]"
