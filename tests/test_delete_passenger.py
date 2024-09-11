@@ -23,4 +23,3 @@ def test_delete_passenger(browser, credentials):
     address_book_page.delete_passenger(passenger_data)
     time.sleep(1)
     assert not page.locator(f"text={passenger_data['lastname']} {passenger_data['firstname']}").is_visible()
-

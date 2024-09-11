@@ -14,7 +14,7 @@ def browser():
 @pytest.fixture
 def credentials():
     return {
-        "username": "aleksandr.petrichenko@kupibilet.ru",
+        "username": "zeus.1991@list.ru",
         "password": "Demon9165max"
     }
 

@@ -6,4 +6,4 @@ def test_login_pass(browser, credentials):
     login_page = LoginPage(page)
 
     login_page.login(credentials["username"], credentials["password"])
-    login_page.assert_text_present_on_page('aleksandr.petrichenko@kupibilet.ru')
+    login_page.assert_text_present_on_page('zeus.1991@list.ru')

@@ -33,13 +33,10 @@ class AddressBook(BasePage):
 
         # Сохранение пасса
         self.wait_for_selector_and_click(self.locators.SAVE_BUTTON)
-        self.wait_for_selector_and_click(self.locators.DOWNLOAD_NOTEBOOK_PASSENGERS)
 
     def delete_passenger(self, passenger_data):
         passenger_locator = f"text={passenger_data['lastname']} {passenger_data['firstname']}"
 
-        # assert passenger_locator.is_visible()
-        self.wait_for_selector_and_click(self.locators.DOWNLOAD_NOTEBOOK_PASSENGERS)
         self.wait_for_selector_and_click(passenger_locator)
         self.wait_for_selector_and_click(self.locators.DELETE_PASSENGER_BUTTON)
         self.wait_for_selector_and_click(self.locators.CONFIRM_DELETE_BUTTON)
