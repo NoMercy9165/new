@@ -1,4 +1,6 @@
 from playwright.sync_api import expect
+from urllib.parse import unquote
+
 
 
 class BasePage:
@@ -46,3 +48,11 @@ class BasePage:
         locator.scroll_into_view_if_needed()
         locator.wait_for(timeout=timeout)
         assert text in locator.inner_text()
+
+    def check_link_opens_in_new_tab(self, selector, expected_partial_url):
+        with self.page.expect_popup() as new_page_info:
+            self.wait_for_selector_and_click(selector)
+        new_page = new_page_info.value
+        actual_url = unquote(new_page.url)
+        assert expected_partial_url in actual_url
+        new_page.close()

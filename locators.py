@@ -25,3 +25,11 @@ class AddressBookPageLocators:
     DELETE_PASSENGER_BUTTON = 'text=Удалить пассажира'
     CONFIRM_DELETE_BUTTON = 'text=Удалить'
     DOWNLOAD_NOTEBOOK_PASSENGERS = "//span[contains(text(), 'Загрузить ещё')]"
+
+
+class BonusProgram:
+    BONUS_PROGRAM = 'text=Бонусная программа'
+    FILL_PROFILE = 'text=Заполните профиль'
+    APPLE_APP_LINK = 'svg[name="apple"]'
+    GOOGLE_PLAY_LINK = 'svg[name="gplay"]'
+    HUAWEI_APP_LINK = 'svg[name="huawei"]'
