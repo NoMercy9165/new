@@ -33,3 +33,6 @@ class BonusProgram:
     APPLE_APP_LINK = 'svg[name="apple"]'
     GOOGLE_PLAY_LINK = 'svg[name="gplay"]'
     HUAWEI_APP_LINK = 'svg[name="huawei"]'
+    SHARE_VK = 'svg[name="social-vk"]'
+    SHARE_OK = 'svg[name="social-ok"]'
+    SHARE_X = 'svg[name="social-x"]'

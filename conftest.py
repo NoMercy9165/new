@@ -34,4 +34,3 @@ def login(browser, credentials):
     login_page = LoginPage(page)
     login_page.login(credentials["username"], credentials["password"])
     yield page
-    page.close()

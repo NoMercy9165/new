@@ -1,6 +1,4 @@
 from playwright.sync_api import expect
-from urllib.parse import unquote
-
 
 
 class BasePage:
@@ -53,6 +51,5 @@ class BasePage:
         with self.page.expect_popup() as new_page_info:
             self.wait_for_selector_and_click(selector)
         new_page = new_page_info.value
-        actual_url = unquote(new_page.url)
+        actual_url = new_page.url
         assert expected_partial_url in actual_url
-        new_page.close()
