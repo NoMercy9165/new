@@ -7,7 +7,7 @@ INSTALL_APP_LINKS = [
 ]
 
 SOCIAL_APP_LINKS = [
-    (BonusProgram.SHARE_VK, "https://vk.com/share"),
+    (BonusProgram.SHARE_VK, "https://oauth.vk.com/authorize"),
     (BonusProgram.SHARE_OK, "https://connect.ok.ru/"),
     (BonusProgram.SHARE_X, "https://x.com/intent/")
 ]
