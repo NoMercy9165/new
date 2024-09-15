@@ -18,5 +18,5 @@ def test_add_passenger(browser, credentials):
     address_book.add_passenger(passenger_data)
 
     time.sleep(1)
-    # page.locator('div[class^="styled__StyledLottie"]').wait_for(state='hidden')
+    # # page.locator('div[class^="styled__StyledLottie"]').wait_for(state='hidden')
     assert page.locator(f"text={passenger_data['lastname']} {passenger_data['firstname']}").is_visible()

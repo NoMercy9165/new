@@ -1,7 +1,7 @@
 import pytest
 from playwright.sync_api import sync_playwright
 from pages.login_page import LoginPage
-
+from data_generators import generate_random_credentials
 
 @pytest.fixture(scope="session")
 def browser():
@@ -22,10 +22,7 @@ def credentials():
 
 @pytest.fixture
 def invalid_credentials():
-    return {
-        "username": "invalid_user@example.com",
-        "password": "wrong_password"
-    }
+    return generate_random_credentials()
 
 
 @pytest.fixture(scope="function")

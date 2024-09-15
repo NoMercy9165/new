@@ -34,3 +34,13 @@ def generate_passenger_data():
         },
         'gender': gender
     }
+
+
+def generate_random_credentials():
+    fake = Faker()
+    username = fake.email()
+    password = fake.password(length=12, special_chars=True, digits=True, upper_case=True, lower_case=True)
+    return {
+        "username": username,
+        "password": password
+    }
