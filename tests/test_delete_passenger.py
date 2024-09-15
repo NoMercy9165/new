@@ -17,7 +17,7 @@ def test_delete_passenger(browser, credentials):
     address_book_page = AddressBook(page)
 
     passenger_data = generate_passenger_data()
-    address_book_page.add_passenger(passenger_data)  # Add passenger for testing deletion
+    address_book_page.add_passenger(passenger_data)
 
     address_book_page.delete_passenger(passenger_data)
     time.sleep(1)
