@@ -7,7 +7,7 @@ class LoginPageLocators:
 
 class ProfilePageLocators:
     PROFILE_MENU = 'text=zeus.1991@list.ru'
-    ADDRESS_BOOK_LINK = 'text=Записная книжка'
+    ADDRESS_BOOK_LINK = 'text=Пассажиры'
 
 
 class AddressBookPageLocators:

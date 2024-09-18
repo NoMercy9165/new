@@ -53,3 +53,49 @@ class BasePage:
         new_page = new_page_info.value
         actual_url = new_page.url
         assert expected_partial_url in actual_url
+
+
+class SupportDropdown:
+    def __init__(self, page):
+        self.page = page
+        self.order_actions = self.page.locator('text=Действия с заказом')
+        self.chat = self.page.locator('text=Чат')
+        self.faq = self.page.locator('text=Инструкции и FAQ')
+
+    def click_order_actions(self):
+        self.order_actions.click()
+
+    def click_chat(self):
+        self.chat.click()
+
+    def click_faq(self):
+        self.faq.click()
+
+
+class ProfileDropdown:
+    def __init__(self, page):
+        self.page = page
+        self.orders = self.page.locator('text=Заказы')
+        self.bonus_program = self.page.locator('text=Бонусная программа')
+        self.subscriptions = self.page.locator('text=Подписки')
+        self.passengers = self.page.locator('text=Пассажиры')
+        self.settings = self.page.locator('text=Настройки')
+        self.logout = self.page.locator('text=Выйти из аккаунта')
+
+    def click_orders(self):
+        self.orders.click()
+
+    def click_bonus_program(self):
+        self.bonus_program.click()
+
+    def click_subscriptions(self):
+        self.subscriptions.click()
+
+    def click_passengers(self):
+        self.passengers.click()
+
+    def click_settings(self):
+        self.settings.click()
+
+    def click_logout(self):
+        self.logout.click()
