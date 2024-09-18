@@ -7,6 +7,10 @@ class BasePage:
     def __init__(self, page):
         self.page = page
         self.endpoint = ''
+        self.profile_dropdown = ProfileDropdown(page)
+        self.support_dropdown = SupportDropdown(page)
+        self.profile_button = self.page.locator('text=zeus.1991@list.ru')
+        self.support_button = self.page.locator('text=Поддержка')
 
     def _get_full_url(self):
         return f"{self.__BASE_URL}/{self.endpoint}"
@@ -53,6 +57,12 @@ class BasePage:
         new_page = new_page_info.value
         actual_url = new_page.url
         assert expected_partial_url in actual_url
+
+    def click_profile(self):
+        self.profile_button.click()
+
+    def click_support(self):
+        self.support_button.click()
 
 
 class SupportDropdown:
