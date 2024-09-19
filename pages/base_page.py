@@ -85,7 +85,7 @@ class SupportDropdown:
 class ProfileDropdown:
     def __init__(self, page):
         self.page = page
-        self.orders = self.page.locator('text=Заказы')
+        self.orders = self.page.locator('//span[text()="Заказы"]')
         self.bonus_program = self.page.locator('text=Бонусная программа')
         self.subscriptions = self.page.locator('text=Подписки')
         self.passengers = self.page.locator('text=Пассажиры')
