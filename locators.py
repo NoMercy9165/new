@@ -3,6 +3,16 @@ class LoginPageLocators:
     EMAIL_INPUT = '[data-testid="email-input"]'
     PASSWORD_INPUT = '[data-testid="password-input"]'
     SIGN_IN_BUTTON = '[data-testid="sign-in-button"]'
+    VK_SIGN = '[name="social-vk"]'
+    NUMBER_INPUT = '[placeholder="Телефон или почта"]'
+    BUTTON_CONTINUE = 'text=Продолжить'
+    PASSWORD_VK_INPUT = '[autocomplete="current-password"]'
+    GOOGLE_SIGN = '.styled__BaseSocialLink-sc-o4axx5-1.guEPVM'
+    GOOGLE_INPUT_EMAIL = '[name="identifier"]'
+    GOOGLE_BUTTON_CONTINUE = 'text=Далее'
+    GOOGLE_INPUT_PASSWORD = '[autocomplete="current-password"]'
+    APPLE_SING = "//svg[@name='apple']"
+    APPLE_INPUT_EMAIL = '[id="account_name_text_field"]'
 
 
 class ProfilePageLocators:

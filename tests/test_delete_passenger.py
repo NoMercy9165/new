@@ -1,7 +1,7 @@
 import time
 from pages.address_book_page import AddressBook
 from pages.login_page import LoginPage
-from data_generators import generate_passenger_data
+from generators.data_generators import generate_passenger_data
 from pages.profile_page import ProfilePage
 
 

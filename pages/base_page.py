@@ -7,10 +7,21 @@ class BasePage:
     def __init__(self, page):
         self.page = page
         self.endpoint = ''
-        self.profile_dropdown = ProfileDropdown(page)
-        self.support_dropdown = SupportDropdown(page)
         self.profile_button = self.page.locator('text=zeus.1991@list.ru')
-        self.support_button = self.page.locator('text=Поддержка')
+        self.support_button = self.page.locator('//span[text()="Поддержка"]')
+
+        # Локаторы для профиля
+        self.orders = self.page.locator('//span[text()="Заказы"]')
+        self.bonus_program = self.page.locator('text=Бонусная программа')
+        self.subscriptions = self.page.locator('text=Подписки')
+        self.passengers = self.page.locator('text=Пассажиры')
+        self.settings = self.page.locator('text=Настройки')
+        self.logout = self.page.locator('text=Выйти из аккаунта')
+
+        # Локаторы для поддержки
+        self.order_actions = self.page.locator('text=Действия с заказами')
+        self.chat = self.page.locator('//*[@id="app-wrap"]/div[2]/header/div/nav[2]/div[3]/div[2]/div/span[2]')
+        self.faq = self.page.locator('text=Инструкции и FAQ')
 
     def _get_full_url(self):
         return f"{self.__BASE_URL}/{self.endpoint}"
@@ -24,6 +35,9 @@ class BasePage:
     def wait_for_selector_and_click(self, selector):
         self.page.wait_for_selector(selector)
         self.page.click(selector)
+
+    def press_enter(self):
+        self.page.keyboard.press('Enter')
 
     def wait_for_selector_and_fill(self, selector, value):
         self.page.wait_for_selector(selector)
@@ -58,39 +72,9 @@ class BasePage:
         actual_url = new_page.url
         assert expected_partial_url in actual_url
 
+    # Методы для работы с профилем
     def click_profile(self):
         self.profile_button.click()
-
-    def click_support(self):
-        self.support_button.click()
-
-
-class SupportDropdown:
-    def __init__(self, page):
-        self.page = page
-        self.order_actions = self.page.locator('text=Действия с заказом')
-        self.chat = self.page.locator('text=Чат')
-        self.faq = self.page.locator('text=Инструкции и FAQ')
-
-    def click_order_actions(self):
-        self.order_actions.click()
-
-    def click_chat(self):
-        self.chat.click()
-
-    def click_faq(self):
-        self.faq.click()
-
-
-class ProfileDropdown:
-    def __init__(self, page):
-        self.page = page
-        self.orders = self.page.locator('//span[text()="Заказы"]')
-        self.bonus_program = self.page.locator('text=Бонусная программа')
-        self.subscriptions = self.page.locator('text=Подписки')
-        self.passengers = self.page.locator('text=Пассажиры')
-        self.settings = self.page.locator('text=Настройки')
-        self.logout = self.page.locator('text=Выйти из аккаунта')
 
     def click_orders(self):
         self.orders.click()
@@ -109,3 +93,21 @@ class ProfileDropdown:
 
     def click_logout(self):
         self.logout.click()
+
+    # Методы для работы с поддержкой
+    def click_support(self):
+        self.support_button.click()
+
+    def click_order_actions(self):
+        self.order_actions.click()
+
+    def click_chat(self):
+        self.chat.click()
+
+    def click_faq(self):
+        self.faq.click()
+
+    def wait_for_url_and_assert(self, expected_url: str):
+        self.page.wait_for_url(expected_url)
+        assert self.page.url.startswith(expected_url), f"URL не соответствует ожидаемому: {self.page.url}"
+
